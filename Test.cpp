@@ -4,7 +4,7 @@
  * 
  * IMPORTANT: Please write more tests - the tests here are only for example and are not complete.
  *
- * AUTHORS: <Roni Pick>
+ * AUTHORS: <Please write your names here>
  * 
  * Date: 2021-02
  */
@@ -92,36 +92,36 @@ TEST_CASE("Bad input") {
 
 TEST_CASE("Bad input printing") {
 	//it will fail because the second char is + instead of the given char ~
-    CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) == nospaces("*****\n"
+    CHECK(nospaces(mat(5, 5, '*', '~')) != nospaces("*****\n"
 														 "*+++*\n"
 														 "*+*+*\n"
 														 "*+++*\n"
 														 "*****"));
 
 	//it will fail because the first char is ! instead of the given char *
-    CHECK_THROWS(nospaces(mat(5, 5, '*', '+')) == nospaces("!!!!!\n"
+    CHECK(nospaces(mat(5, 5, '*', '+')) != nospaces("!!!!!\n"
 														 "!+++!\n"
 														 "!+!+!\n"
 														 "!+++!\n"
 														 "!!!!!"));
 
 	//it will fail because it's the second char instead of the first
-	CHECK_THROWS(nospaces(mat(1, 1, '$', '-')) == nospaces("-"));
+	CHECK(nospaces(mat(1, 1, '$', '-')) != nospaces("-"));
 
 	//it will fail because in the 3rd raw there is a wrong char ~
-	CHECK_THROWS(nospaces(mat(5, 5, '*', '+')) == nospaces("*****\n"
+	CHECK(nospaces(mat(5, 5, '*', '+')) != nospaces("*****\n"
 														 "*+++*\n"
 														 "*+~+*\n"
 														 "*+++*\n"
 														 "*****"));
 
 	//it will fail because the number of raws is 3 but the given number was 5
-	CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) == nospaces("*****\n"
+	CHECK(nospaces(mat(5, 5, '*', '~')) != nospaces("*****\n"
 														 "*+++*\n"
 														 "*****"));
 
 	//it will fail because the number of chars in each column is 5 but the given number was 3
-	CHECK(nospaces(mat(3, 5, '*', '+')) == nospaces("*****\n"
+	CHECK(nospaces(mat(3, 5, '*', '+')) != nospaces("*****\n"
 													 "*+++*\n"
 													 "*+*+*\n"
 													 "*+++*\n"

@@ -116,7 +116,7 @@ TEST_CASE("Bad input printing") {
 														 "*****"));
 
 	//it will fail because the number of raws is 3 but the given number was 5
-	CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) != nospaces("*****\n"
+	CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) == nospaces("*****\n"
 														 "*+++*\n"
 														 "*****"));
 

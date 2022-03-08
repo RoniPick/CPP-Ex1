@@ -92,14 +92,14 @@ TEST_CASE("Bad input") {
 
 TEST_CASE("Bad input printing") {
 	//it will fail because the second char is + instead of the given char ~
-    CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) != nospaces("*****\n"
+    CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) == nospaces("*****\n"
 														 "*+++*\n"
 														 "*+*+*\n"
 														 "*+++*\n"
 														 "*****"));
 
 	//it will fail because the first char is ! instead of the given char *
-    CHECK_THROWS(nospaces(mat(5, 5, '*', '+')) != nospaces("!!!!!\n"
+    CHECK_THROWS(nospaces(mat(5, 5, '*', '+')) == nospaces("!!!!!\n"
 														 "!+++!\n"
 														 "!+!+!\n"
 														 "!+++!\n"
@@ -119,7 +119,7 @@ TEST_CASE("Bad input printing") {
 	CHECK_THROWS(nospaces(mat(5, 5, '*', '~')) != nospaces("*****\n"
 														 "*+++*\n"
 														 "*****"));
-														 
+
 	//it will fail because the number of chars in each column is 5 but the given number was 3
 	CHECK(nospaces(mat(3, 5, '*', '+')) == nospaces("*****\n"
 													 "*+++*\n"
